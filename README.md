@@ -53,6 +53,10 @@ DISABLED=no
 NM_CONTROLLED=no
 SYSTEMD_CONTROLLED=no
 ```
+Если нет нужного интерфейса прописыаем такую команду:
+```+
+mkdir /etc/net/ifaces/xxx
+```
 После этого задал нужный адрес на интрефейс из таблицы №2:  
 ```
 echo xxx.xxx.xxx.xxx/xx > /etc/net/ifaces/ensxxx/ipv4address
