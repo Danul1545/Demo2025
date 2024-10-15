@@ -75,12 +75,7 @@ echo nameserver 8.8.8.8 > /etc/resolv.conf
 После этого перезагружаем сетевую службу:  
 ```
 service network restart
-```
-И проверяем настройку при помощи команды `ip a`
-Если на интерфейсе показывается 2 IP-адреса то  нужно отключить NetworkManager командой:
-```
-systemctl disable network.service NetworkManager
-```
+
 ##Настройка IP адресов на ISP
 
 ```
@@ -250,12 +245,14 @@ end
 
 ## HQ-SRV
 
+В заходим в деректорию /etc/net/ifaces/ensxx/options `nano` или `vim` и изменяем параметры:
+
 ```
-echo "TYPE=eth
+TYPE=eth
 DISABLED=no
 NM_CONTROLLED=no
 BOOTPROTO=static
-CONFIG_IPv4=yes" > /etc/net/ifaces/ens192/options
+CONFIG_IPv4=yes
 ```
 
 ```
