@@ -75,6 +75,7 @@ echo nameserver 8.8.8.8 > /etc/resolv.conf
 После этого перезагружаем сетевую службу:  
 ```
 service network restart
+```
 
 ##Настройка IP адресов на ISP
 
