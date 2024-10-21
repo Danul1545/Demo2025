@@ -161,8 +161,6 @@ port ge1
   connect ip interface HQ-MGMT
 ```
 
-<img src="02.png" width='600'>
-
 show run
 
 ```
