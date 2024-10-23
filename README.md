@@ -2,7 +2,7 @@
 
 ## Топология №1.
 
-![Снимок экрана (14)](https://github.com/user-attachments/assets/43762920-c4a6-4094-8f64-4c0825321222)
+![Снимок экрана (15)](https://github.com/user-attachments/assets/6254982b-e9ee-4b59-bb7a-c9da1cf8c9bf)
 
 
 ### Таблица №2 (Операциоенные системы).
