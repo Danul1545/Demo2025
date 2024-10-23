@@ -347,3 +347,87 @@ sh ip ospf interface
 
 ![image](https://github.com/user-attachments/assets/086c7fb8-6025-45c5-810a-3673ef7f74ab)
 
+## Настройка NAT
+
+### ISP
+
+```
+object-group network LOCAL_NET
+  ip address-range 172.16.5.1-172.16.5.2
+  ip address-range 172.16.4.1-172.16.4.2
+exit
+
+nat source
+  ruleset SNAT
+    to interface gi1/0/1
+    rule 1
+      match source-address LOCAL_NET
+      action source-nat interface
+      enable
+    exit
+  exit
+exit
+```
+
+### HQ-RTR
+
+```
+interface TO-ISP
+ ip nat outside
+!
+interface HQ-SRV
+ ip nat inside
+!
+interface HQ-CLI
+ ip nat inside
+!
+interface HQ-MGMT
+ ip nat inside
+!
+ip nat pool NAT_POOL 192.168.0.1-192.168.0.254
+!
+ip nat source dynamic inside-to-outside pool NAT_POOL overload interface TO-ISP
+```
+
+### BR-RTR
+
+```
+object-group network LOCAL_NET
+  ip address-range 192.168.1.1-192.168.1.30
+exit
+
+nat source
+  ruleset SNAT
+    to interface gi1/0/1
+    rule 1
+      match source-address LOCAL_NET
+      action source-nat interface
+      enable
+    exit
+  exit
+exit
+```
+
+## Настройка DHCP на HQ-RTR (EcoRouter)
+
+```
+ip pool HQ-NET 1
+ range 192.168.0.66-192.168.0.70
+!
+dhcp-server 1
+ lease 86400
+ mask 255.255.255.0
+ pool HQ-NET 1
+  dns 192.168.0.2
+  domain-name au-team.irpo
+  gateway 192.168.0.65
+  mask 255.255.255.240
+!
+interface HQ-CLI
+ dhcp-server 1
+!
+```
+
+
+
+
