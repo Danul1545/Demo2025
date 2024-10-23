@@ -37,9 +37,9 @@
 | BR-SRV         | ens192    | 192.168.1.2 |       /27       | 192.168.1.1 |
 
 
-# Настраиваем IP адреса
+## Настраиваем IP адреса
 
-## ISP
+### ISP
 
 ```
 configure
@@ -58,7 +58,7 @@ commit
 confirm
 ```
 
-## HQ-RTR - EcoRouter
+### HQ-RTR - EcoRouter
 
 Создаем сущность интерфейса и назначаем IP
 
@@ -141,7 +141,7 @@ int tunnel.1
 ip route 0.0.0.0/0 172.16.4.1
 ```
 
-## HQ-SRV
+### HQ-SRV
 
 командой `nano` заходим в файл конфигурации и настраиваем:
 
@@ -165,7 +165,7 @@ echo default via 192.168.0.1 > /etc/net/ifaces/ens192/ipv4route
 systemctl restart network
 ```
 
-## BR-RTR
+### BR-RTR
 
 ```
 configure
@@ -195,7 +195,7 @@ commit
 confirm
 ```
 
-## BR-SRV
+### BR-SRV
 
 командой `nano` заходим в файл конфигурации и настраиваем:
 
@@ -224,4 +224,54 @@ systemctl restart network
 ```
 
 Проверяем командой `ip a`
+
+## Создание локальных учетных записей
+
+### HQ-SRV и BR-SRV
+
+```
+useradd -m -u 1010 sshuser
+passwd sshuser
+```
+
+```
+nano /etc/sudoers.d/sshuser
+```
+
+```
+sshuser ALL=(ALL) NOPASSWD:ALL
+```
+
+Проверка:
+
+```
+su - sshuser
+sudo whoami
+```
+
+### HQ-RTR (EcoRouter)
+
+```
+conf t
+username net_admin
+password P@ssw0rd
+role admin
+activate
+```
+
+### BR-RTR (Eltex - vESR)
+
+```
+configure
+username net_admin
+password P@ssw0rd
+privilege 15
+end
+!
+commit
+confirm
+!
+```
+
+
 
