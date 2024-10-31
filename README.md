@@ -1,6 +1,6 @@
 # Demo2025
 
-1) Настройка IP [->](../Option/IP%add/EADME.md)
+1) Настройка IP [->](../Option/IP%add/README.md)
 
 ## Топология №1.
 
