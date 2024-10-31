@@ -1,6 +1,6 @@
 # Demo2025
 
-1) Настройка IP [->](./Option/IP%add.md)
+1) Настройка IP [->](../Option/IP%add.md)
 
 ## Топология №1.
 
