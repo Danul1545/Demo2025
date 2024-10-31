@@ -1,20 +1,20 @@
 # Demo2025
 
-1. Настройка IP  [-->](./IP_add/README.md) 
+## 1. Настройка IP  [-->](./IP_add/README.md) 
 
-2. Настройка Пользователей  [-->](./Users/README.md)
+## 2. Настройка Пользователей  [-->](./Users/README.md)
 
-3. Настройка OSPF  [-->](./OSPF/README.md)
+## 3. Настройка OSPF  [-->](./OSPF/README.md)
 
-4. Настройка NAT  [-->](./NAT/README.md)
+## 4. Настройка NAT  [-->](./NAT/README.md)
 
-5. Настройка DHCP [-->](./DHCP/README.md)
+## 5. Настройка DHCP [-->](./DHCP/README.md)
 
-6. Настройка SSH  [-->](./SSH/README.md)
+## 6. Настройка SSH  [-->](./SSH/README.md)
 
-7. Настройка времени  [-->](./TIME/README.md)
+## 7. Настройка времени  [-->](./TIME/README.md)
 
-## Топология №1.
+### Топология №1.
 
 ![Снимок экрана (15)](https://github.com/user-attachments/assets/6254982b-e9ee-4b59-bb7a-c9da1cf8c9bf)
 
