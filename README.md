@@ -1,5 +1,7 @@
 # Demo2025
 
+1)  [->](./настройка IP/Readme.md) 
+
 ## Топология №1.
 
 ![Снимок экрана (15)](https://github.com/user-attachments/assets/6254982b-e9ee-4b59-bb7a-c9da1cf8c9bf)
