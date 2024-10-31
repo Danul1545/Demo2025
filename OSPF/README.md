@@ -49,6 +49,9 @@ confirm
 
 ### HQ-RTR
 
+![image](https://github.com/user-attachments/assets/d8209a8f-f632-457d-8e02-dc8a23b776d2)
+
+
 ```
 sh ip ospf neighbor 
 sh ip ospf int br
