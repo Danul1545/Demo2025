@@ -1,18 +1,18 @@
 # Demo2025
 
-### 1. Настройка IP  [-->](./IP_add/README.md) 
+#### 1. Настройка IP  [-->](./IP_add/README.md) 
 
-### 2. Настройка Пользователей  [-->](./Users/README.md)
+#### 2. Настройка Пользователей  [-->](./Users/README.md)
 
-### 3. Настройка OSPF  [-->](./OSPF/README.md)
+#### 3. Настройка OSPF  [-->](./OSPF/README.md)
 
-### 4. Настройка NAT  [-->](./NAT/README.md)
+#### 4. Настройка NAT  [-->](./NAT/README.md)
 
-### 5. Настройка DHCP [-->](./DHCP/README.md)
+#### 5. Настройка DHCP [-->](./DHCP/README.md)
 
-### 6. Настройка SSH  [-->](./SSH/README.md)
+#### 6. Настройка SSH  [-->](./SSH/README.md)
 
-### 7. Настройка времени  [-->](./TIME/README.md)
+#### 7. Настройка времени  [-->](./TIME/README.md)
 
 
 
