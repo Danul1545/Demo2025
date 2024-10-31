@@ -12,6 +12,8 @@
 
 6. Настройка SSH  [-->](./SSH/README.md)
 
+7. Настройка времени  [-->](./TIME/README.md)
+
 ## Топология №1.
 
 ![Снимок экрана (15)](https://github.com/user-attachments/assets/6254982b-e9ee-4b59-bb7a-c9da1cf8c9bf)
@@ -47,45 +49,3 @@
 | HQ-SRV         | ens192    | 192.168.0.2 |       /26       | 192.168.0.1 |
 | HQ-CLI         | ens192    | DHCP        |       /28       | 192.168.0.65|
 | BR-SRV         | ens192    | 192.168.1.2 |       /27       | 192.168.1.1 |
-
-## Проверка и настройка времени
-
-Проверяем какой часовой пояс установлен
-
-```
-timedatectl status
-```
-
-Если отличается, то устанавливаем
- 
-```
-timedatectl set-timezone Asia/Yekaterinburg
-```
-
-### HQ-RTR (EcoRouter)
-
-```
-conf t
-ntp timezone utc+5
-```
-Проверяем:
-
-```
-show ntp timezone
-```
-
-### BR-RTR (Eltex)
-
-```
-configure
-clock timezone gmt +5
-end
-commit
-confirm
-```
-
-Проверяем:
-
-```
-show date
-```
