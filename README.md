@@ -10,6 +10,8 @@
 
 5. Настройка DHCP [-->](./DHCP/README.md)
 
+6. Настройка SSH  [-->](./SSH/README.md)
+
 ## Топология №1.
 
 ![Снимок экрана (15)](https://github.com/user-attachments/assets/6254982b-e9ee-4b59-bb7a-c9da1cf8c9bf)
@@ -46,25 +48,6 @@
 | HQ-CLI         | ens192    | DHCP        |       /28       | 192.168.0.65|
 | BR-SRV         | ens192    | 192.168.1.2 |       /27       | 192.168.1.1 |
 
-## Настройка DHCP на HQ-RTR (EcoRouter)
-
-```
-ip pool HQ-NET 1
- range 192.168.0.66-192.168.0.70
-!
-dhcp-server 1
- lease 86400
- mask 255.255.255.0
- pool HQ-NET 1
-  dns 192.168.0.2
-  domain-name au-team.irpo
-  gateway 192.168.0.65
-  mask 255.255.255.240
-!
-interface HQ-CLI
- dhcp-server 1
-!
-```
 ## Настройка SSH на HQ-SRV и BR-SRV
 
 Делаем на всякий случай бэкап конфига:
