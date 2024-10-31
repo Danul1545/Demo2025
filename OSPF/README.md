@@ -49,16 +49,13 @@ confirm
 
 ### HQ-RTR
 
-![image](https://github.com/user-attachments/assets/d8209a8f-f632-457d-8e02-dc8a23b776d2)
-
-
 ```
 sh ip ospf neighbor 
 sh ip ospf int br
 sh ip route
 ```
 
-[<img src="01.png" width='600'>](https://github.com/netadmin-str/demo2025/blob/main/ospf_conf/01.png)
+![image](https://github.com/user-attachments/assets/d8209a8f-f632-457d-8e02-dc8a23b776d2)
 
 ### BR-RTR
 
