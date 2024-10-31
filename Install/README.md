@@ -48,4 +48,5 @@
 После запуска входим:
 Login `admin`
 Password `password`
-И настраиваем новый пароль password `P@ssw0rd`, сохраняем прописывая `commit` и `confirm`
+И настраиваем новый пароль password `P@ssw0rd`
+Сохраняем прописывая `commit` и `confirm`
