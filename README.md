@@ -6,6 +6,8 @@
 
 3. Настройка OSPF  [-->](./OSPF/README.md)
 
+4. Настройка NAT  [-->](./NAT/README.md)
+
 ## Топология №1.
 
 ![Снимок экрана (15)](https://github.com/user-attachments/assets/6254982b-e9ee-4b59-bb7a-c9da1cf8c9bf)
@@ -41,141 +43,6 @@
 | HQ-SRV         | ens192    | 192.168.0.2 |       /26       | 192.168.0.1 |
 | HQ-CLI         | ens192    | DHCP        |       /28       | 192.168.0.65|
 | BR-SRV         | ens192    | 192.168.1.2 |       /27       | 192.168.1.1 |
-
-## Настраиваем OSPF
-
-### HQ-RTR
-
-```
-router ospf 1
- network 172.16.1.0 0.0.0.3 area 0.0.0.0
- network 192.168.0.0 0.0.0.255 area 0.0.0.0
-!
-interface tunnel.1
- ip ospf authentication message-digest
- ip ospf message-digest-key 1 md5 Demo2025
- ip ospf network point-to-point
-```
-
-### BR-RTR
-
-```
-key-chain ospfkey
-  key 1
-    key-string ascii-text Demo
-  exit
-exit
-
-router ospf 1
-  area 0.0.0.0
-    enable
-  exit
-  enable
-exit
-
-interface gi1/0/2
-  ip ospf int 1
-  ip ospf
-exit
-tunnel gre 1
-  ip ospf int 1
-  ip ospf network point-to-point
-  ip ospf authentication key-chain ospfkey
-  ip ospf authentication algorithm md5
-  ip ospf
-exit
-
-commit
-confirm
-```
-
-Проверка
-
-### HQ-RTR
-
-```
-sh ip ospf neighbor 
-sh ip ospf int br
-sh ip route
-```
-
-[<img src="01.png" width='600'>](https://github.com/netadmin-str/demo2025/blob/main/ospf_conf/01.png)
-
-### BR-RTR
-
-```
-sh ip ospf neighbor
-sh ip route
-```
-
-![image](https://github.com/user-attachments/assets/99d937a0-bb74-4c0d-8609-2572ab8ebdac)
-
-```
-sh ip ospf interface
-```
-
-![image](https://github.com/user-attachments/assets/086c7fb8-6025-45c5-810a-3673ef7f74ab)
-
-## Настройка NAT
-
-### ISP
-
-```
-object-group network LOCAL_NET
-  ip address-range 172.16.5.1-172.16.5.2
-  ip address-range 172.16.4.1-172.16.4.2
-exit
-
-nat source
-  ruleset SNAT
-    to interface gi1/0/1
-    rule 1
-      match source-address LOCAL_NET
-      action source-nat interface
-      enable
-    exit
-  exit
-exit
-```
-
-### HQ-RTR
-
-```
-interface TO-ISP
- ip nat outside
-!
-interface HQ-SRV
- ip nat inside
-!
-interface HQ-CLI
- ip nat inside
-!
-interface HQ-MGMT
- ip nat inside
-!
-ip nat pool NAT_POOL 192.168.0.1-192.168.0.254
-!
-ip nat source dynamic inside-to-outside pool NAT_POOL overload interface TO-ISP
-```
-
-### BR-RTR
-
-```
-object-group network LOCAL_NET
-  ip address-range 192.168.1.1-192.168.1.30
-exit
-
-nat source
-  ruleset SNAT
-    to interface gi1/0/1
-    rule 1
-      match source-address LOCAL_NET
-      action source-nat interface
-      enable
-    exit
-  exit
-exit
-```
 
 ## Настройка DHCP на HQ-RTR (EcoRouter)
 
