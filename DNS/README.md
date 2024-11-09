@@ -150,8 +150,6 @@ systemctl restart bind
 dig hq-srv.au-team.irpo
 ```
 
-<img src="10.png" width='600'>
-
 ### Создаем зону обратного просмотра и PTR записи
 
 ```
@@ -165,7 +163,6 @@ zone "0.168.192.in-addr.arpa" {
 };
 ```
 
-<img src="11.png" width='600'>
 
 Копируем шаблон файла
 
@@ -209,7 +206,6 @@ $TTL    1D
 named-checkconf -z
 ```
 
-<img src="12.png" width='600'>
 
 Перезагружаем `bind`
 
@@ -223,8 +219,4 @@ systemctl restart bind
 dig -x 192.168.0.2
 ```
 
-<img src="13.png" width='600'>
-
 ### Комплекская проверка с HQ-CLI
-
-<img src="14.png" width='600'>
