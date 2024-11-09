@@ -5,13 +5,13 @@
 ```
 configure
 
-int gi1/0/3
-ip add 172.16.4.1/28
+int gi1/0/2
+ip add 172.16.5.1/28
 ip firewall disable
 no shutdown
 
-int gi1/0/2
-ip add 172.16.5.1/28
+int gi1/0/3
+ip add 172.16.4.1/28
 ip firewall disable
 no shutdown
 
