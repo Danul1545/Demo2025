@@ -46,7 +46,10 @@
 ![image](https://github.com/user-attachments/assets/fddab497-806d-4784-b748-b0fe5454c8b9)
 
 После запуска входим:<br>
- Login `admin`<br>
- Password `password`<br>
- И настраиваем новый пароль password `P@ssw0rd`<br>
+ Login - `admin`<br>
+ Password - `password`<br>
+ И настраиваем новый пароль 
+ ```
+password P@ssw0rd
+ ```
  Сохраняем прописывая `commit` и `confirm`<br>
