@@ -16,9 +16,6 @@ nano  /var/lib/bind/etc/options.conf
 
 Изменяем следующие параметры
 
-<img src="01.png" width='600'>
-<img src="02.png" width='600'>
-
 Проверяем на ошибки
 
 ```
@@ -26,12 +23,8 @@ named-checkconf
 ```
 
 Если появилась вот такая ошибка:
-
-<img src="03.png" width='600'>
  
 Нужно скофигураровать ключи с помощью `rndc-confgen`
-
-<img src="04.png" width='600'>
 
 Редактируем файл `var/lib/bind/etc/rndc.key `
 ```
@@ -40,7 +33,6 @@ nano /var/lib/bind/etc/rndc.key
 
 Встравляем в него ключ, который получили при помощи `rndc-confgen`
 
-<img src="05.png" width='600'>
 
 Проверяем на ошибки
 
@@ -58,8 +50,6 @@ systemctl enable --now bind
 ```
 systemctl status bind
 ```
-
-<img src="06.png" width='600'>
 
 Редактируем `resolv.conf`
 
@@ -86,7 +76,6 @@ systemctl restart network
 dig ya.ru
 ```
 
-<img src="07.png" width='600'>
 
 ### Создаем зону прямого просмотра
 
@@ -101,7 +90,6 @@ zone "au-team.irpo" {
 };
 ```
 
-<img src="08.png" width='600'>
 
 Создаем копию файла-шаблона прямой зоны `/var/lib/bind/etc/zone/localdomain`
 
