@@ -40,5 +40,3 @@ confirm
 show date
 ```
 
-
-хааа [-->](https://docs.google.com/document/u/0/d/1gw-aewMqPLfv1nFOYQZU4Svufjf3aajY/mobilebasic#heading=h.ceqh8ghhevp0)
