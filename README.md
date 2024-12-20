@@ -1,5 +1,5 @@
 # Demo2025
-# решение на ALT хааа [-->](https://docs.google.com/document/u/0/d/1gw-aewMqPLfv1nFOYQZU4Svufjf3aajY/mobilebasic#heading=h.ceqh8ghhevp0)
+# решение на ALT [-->](https://docs.google.com/document/u/0/d/1gw-aewMqPLfv1nFOYQZU4Svufjf3aajY/mobilebasic#heading=h.ceqh8ghhevp0)
 
 #### Установка [-->](./Install/README.md)
 
