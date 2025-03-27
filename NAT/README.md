@@ -1,4 +1,10 @@
-## Настройка NAT
+<details>
+  <summary>Настройка NAT на alt linux</summary>
+а не как
+<details>
+
+<details>
+  <summary>Настройка NAT на eco router</summary>
 
 ### ISP
 
@@ -58,3 +64,4 @@ nat source
   exit
 exit
 ```
+<details>
