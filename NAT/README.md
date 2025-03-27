@@ -30,8 +30,7 @@ iptables -A FORWARD -i eth0 -o eth1 -m state --state ESTABLISHED,RELATED -j ACCE
 iptables-save
 ```
 
-
-<summary>Настройка NAT на eco router</summary>
+<details> <summary>Настройка NAT на eco router</summary>
 
 ## ISP
 
@@ -91,4 +90,3 @@ nat source
   exit
 exit
 ```
-<details>
