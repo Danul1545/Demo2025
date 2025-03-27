@@ -1,12 +1,33 @@
-<details>
-  <summary>Настройка NAT на alt linux</summary>
-а не как
-<details>
+<details><summary>Настройка NAT на alt linux</summary>
+  
+Включить ip-адресацию `/etc/sysctl.conf`
+```
+net.ipv4.ip_forward = 1
+```
 
-<details>
-  <summary>Настройка NAT на eco router</summary>
+Приминить изменения
+```
+sudo sysctl -p
+```
 
-### ISP
+Интерфейсы:
+- `eth0` - внешний интерфейс
+- `eth1` - внутрений интерфейс
+
+Интерфейс с раздачей интернета:
+```
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+```
+
+Разрешения на передачу адресации:
+```
+iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT
+iptables -A FORWARD -i eth0 -o eth1 -m state --state ESTABLISHED,RELATED -j ACCEPT
+```
+
+<details> <summary>Настройка NAT на eco router</summary>
+
+## ISP
 
 ```
 object-group network LOCAL_NET
@@ -26,7 +47,7 @@ nat source
 exit
 ```
 
-### HQ-RTR
+## HQ-RTR
 
 ```
 interface TO-ISP
@@ -46,7 +67,7 @@ ip nat pool NAT_POOL 192.168.0.1-192.168.0.254
 ip nat source dynamic inside-to-outside pool NAT_POOL overload interface TO-ISP
 ```
 
-### BR-RTR
+## BR-RTR
 
 ```
 object-group network LOCAL_NET
