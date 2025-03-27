@@ -25,7 +25,13 @@ iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT
 iptables -A FORWARD -i eth0 -o eth1 -m state --state ESTABLISHED,RELATED -j ACCEPT
 ```
 
-<details> <summary>Настройка NAT на eco router</summary>
+Сохранить настройку:
+```
+iptables-save
+```
+
+
+<summary>Настройка NAT на eco router</summary>
 
 ## ISP
 
