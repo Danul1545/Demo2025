@@ -1,6 +1,3 @@
-
-<details> <summary>Настройка NAT на eco router</summary>
-
 ## ISP
 
 ```
