@@ -33,6 +33,7 @@ iptables -A FORWARD -i eth0 -o eth1 -m state --state ESTABLISHED,RELATED -j ACCE
 ```
 iptables-save
 ```
+</details>
 
 <details> <summary>Настройка NAT на eco router</summary>
 
